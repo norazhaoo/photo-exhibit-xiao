@@ -296,63 +296,6 @@
         grid-column: span 8;
       }
 
-      .experience {
-        max-width: var(--max-width);
-        margin: 120px auto;
-        padding: 0 40px;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 40px;
-      }
-
-      .experience-copy {
-        grid-column: span 5;
-      }
-
-      .experience-copy h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 34px;
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        margin: 0 0 24px;
-      }
-
-      .experience-copy p {
-        font-size: 14px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--muted);
-        margin: 0 0 16px;
-      }
-
-      .experience-steps {
-        grid-column: span 7;
-        display: grid;
-        gap: 32px;
-      }
-
-      .step {
-        border-top: 1px solid var(--border-light);
-        padding-top: 24px;
-      }
-
-      .step strong {
-        display: block;
-        font-family: "Playfair Display", serif;
-        font-size: 18px;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        margin-bottom: 16px;
-      }
-
-      .step span {
-        display: block;
-        font-size: 13px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
-
       .testimonial {
         background: #f3eee7;
         padding: 120px 40px;
@@ -378,53 +321,6 @@
         font-size: 12px;
         text-transform: uppercase;
         color: var(--accent-dark);
-      }
-
-      .journal {
-        max-width: var(--max-width);
-        margin: 120px auto;
-        padding: 0 40px;
-      }
-
-      .journal-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 56px;
-        gap: 40px;
-      }
-
-      .journal-list {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 32px;
-      }
-
-      .journal-card {
-        border-top: 1px solid var(--border-light);
-        padding-top: 24px;
-      }
-
-      .journal-card img {
-        width: 100%;
-        aspect-ratio: 3 / 4;
-        object-fit: cover;
-        margin-bottom: 24px;
-      }
-
-      .journal-card h4 {
-        font-family: "Playfair Display", serif;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        font-size: 20px;
-        margin: 0 0 12px;
-      }
-
-      .journal-card span {
-        font-size: 11px;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        color: var(--muted);
       }
 
       .cta-banner {
@@ -509,17 +405,6 @@
 
       @media (max-width: 1080px) {
         .hero,
-        .experience {
-          grid-template-columns: repeat(6, 1fr);
-        }
-
-        .hero-copy,
-        .hero-gallery,
-        .experience-copy,
-        .experience-steps {
-          grid-column: span 6;
-        }
-
         .portfolio-card,
         .portfolio-card:nth-child(2),
         .portfolio-card:nth-child(3),
@@ -549,10 +434,8 @@
         }
 
         .hero,
-        .experience,
         .tagline,
         .portfolio-inner,
-        .journal,
         .cta-banner,
         footer {
           padding: 0 20px;
@@ -564,10 +447,6 @@
 
         .portfolio {
           padding: 80px 0;
-        }
-
-        .journal-list {
-          grid-template-columns: 1fr;
         }
 
         .footer-inner {
@@ -589,8 +468,6 @@
         <div class="logo">XIAO STUDIO</div>
         <div class="nav-links">
           <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-          <a href="#experience" data-i18n="nav.experience">Experience</a>
-          <a href="#journal" data-i18n="nav.journal">Journal</a>
           <a href="#contact" data-i18n="nav.contact">Contact</a>
         </div>
         <div class="lang-switch" id="langToggle" aria-label="Toggle language">EN | 中文</div>
@@ -653,41 +530,6 @@
         </div>
       </section>
 
-      <section class="experience" id="experience">
-        <div class="experience-copy">
-          <span class="section-label" data-i18n="experience.label">Experience</span>
-          <h3 data-i18n="experience.title">Where editorial artistry meets wholehearted devotion</h3>
-          <p data-i18n="experience.body">
-            Guiding you with intention and grace, from the first hello to heirloom
-            albums that will live for generations. Each celebration we document is
-            an immersive collaboration built on trust and connection.
-          </p>
-        </div>
-        <div class="experience-steps">
-          <div class="step">
-            <strong data-i18n="steps.discover.title">Discover</strong>
-            <span data-i18n="steps.discover.body">
-              Begin with a tailored consultation so we can understand the textures,
-              emotions, and narratives you want preserved forever.
-            </span>
-          </div>
-          <div class="step">
-            <strong data-i18n="steps.create.title">Create</strong>
-            <span data-i18n="steps.create.body">
-              On your wedding weekend, we orchestrate editorial portraits while
-              honoring candid, joy-filled vignettes that unfold naturally.
-            </span>
-          </div>
-          <div class="step">
-            <strong data-i18n="steps.reveal.title">Reveal</strong>
-            <span data-i18n="steps.reveal.body">
-              Receive a carefully curated collection alongside handcrafted albums,
-              transforming your memories into tangible heirlooms.
-            </span>
-          </div>
-        </div>
-      </section>
-
       <section class="testimonial">
         <div class="testimonial-inner">
           <blockquote data-i18n="testimonial.quote">
@@ -698,32 +540,6 @@
         </div>
       </section>
 
-      <section class="journal" id="journal">
-        <div class="journal-header">
-          <div>
-            <span class="section-label" data-i18n="journal.label">Journal</span>
-            <h3 data-i18n="journal.title">Stories Behind The Frames</h3>
-          </div>
-          <a class="cta" href="#" data-i18n="journal.cta">View all features</a>
-        </div>
-        <div class="journal-list">
-          <article class="journal-card">
-            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="Paris elopement" />
-            <h4>Parisian Dawn Elopement</h4>
-            <span>Published July 2025</span>
-          </article>
-          <article class="journal-card">
-            <img src="https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=900&q=80" alt="Garden wedding" />
-            <h4>Spring Garden Reverie</h4>
-            <span>Published May 2025</span>
-          </article>
-          <article class="journal-card">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Editorial portrait" />
-            <h4>Composed & Candid Portraits</h4>
-            <span>Published March 2025</span>
-          </article>
-        </div>
-      </section>
     </main>
 
     <section class="cta-banner" id="contact">
@@ -742,8 +558,6 @@
         <div class="footer-logo">XIAO STUDIO</div>
         <div class="footer-nav">
           <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-          <a href="#experience" data-i18n="nav.experience">Experience</a>
-          <a href="#journal" data-i18n="nav.journal">Journal</a>
           <a href="#contact" data-i18n="nav.contact">Contact</a>
         </div>
         <div class="footer-locations">
@@ -758,8 +572,6 @@
         const dict = {
           en: {
             "nav.portfolio": "Portfolio",
-            "nav.experience": "Experience",
-            "nav.journal": "Journal",
             "nav.contact": "Contact",
             "hero.kicker": "Editorial elegance meets luminous storytelling",
             "hero.title":
@@ -772,26 +584,9 @@
             "portfolio.title": "Featured Galleries",
             "portfolio.subtitle":
               "Refined editorial narratives crafted in Montreal, Provence, and destinations worldwide for couples who believe in timeless artistry.",
-            "experience.label": "Experience",
-            "experience.title":
-              "Where editorial artistry meets wholehearted devotion",
-            "experience.body":
-              "Guiding you with intention and grace, from the first hello to heirloom albums that will live for generations. Each celebration we document is an immersive collaboration built on trust and connection.",
-            "steps.discover.title": "Discover",
-            "steps.discover.body":
-              "Begin with a tailored consultation so we can understand the textures, emotions, and narratives you want preserved forever.",
-            "steps.create.title": "Create",
-            "steps.create.body":
-              "On your wedding weekend, we orchestrate editorial portraits while honoring candid, joy-filled vignettes that unfold naturally.",
-            "steps.reveal.title": "Reveal",
-            "steps.reveal.body":
-              "Receive a carefully curated collection alongside handcrafted albums, transforming your memories into tangible heirlooms.",
             "testimonial.quote":
               "Even with a soft rainfall, Xiao found the glow in every moment. Our gallery feels like a beautifully written love letter.",
             "testimonial.author": "— Grace & Hao",
-            "journal.label": "Journal",
-            "journal.title": "Stories Behind The Frames",
-            "journal.cta": "View all features",
             "cta.title": "Are you ready to begin your visual legacy?",
             "cta.body":
               "Reserve your wedding date or inquire for your destination celebration. We craft bespoke coverage for heartfelt, artful stories.",
@@ -799,8 +594,6 @@
           },
           zh: {
             "nav.portfolio": "作品集",
-            "nav.experience": "服务流程",
-            "nav.journal": "灵感志",
             "nav.contact": "联系",
             "hero.kicker": "编辑级优雅与电影感叙事",
             "hero.title": "为现代而喜悦的婚礼创作——蒙特利尔与普罗旺斯",
@@ -812,25 +605,9 @@
             "portfolio.title": "精选影集",
             "portfolio.subtitle":
               "于蒙特利尔、普罗旺斯与全球目的地创作精致叙事，为珍视艺术性的新人而生。",
-            "experience.label": "服务流程",
-            "experience.title": "当编辑美学遇见真挚投入",
-            "experience.body":
-              "自初次沟通到世代典藏，我们以从容与讲究引导全程；每一次记录，皆建立在信任与连结之上。",
-            "steps.discover.title": "认识",
-            "steps.discover.body":
-              "定制化沟通与灵感收集，理解你想被珍藏的质感、情绪与故事。",
-            "steps.create.title": "创作",
-            "steps.create.body":
-              "婚礼当日以编辑视角进行人像与现场叙事，尊重自然与欢悦的流动。",
-            "steps.reveal.title": "呈现",
-            "steps.reveal.body":
-              "交付精心策展的作品与手工相册，让记忆化作可触摸的典藏。",
             "testimonial.quote":
               "即便在细雨中，Xiao 也为每个瞬间找到光。我们的相册像一封写给爱情的优美书信。",
             "testimonial.author": "— Grace 与 Hao",
-            "journal.label": "灵感志",
-            "journal.title": "镜头之后的故事",
-            "journal.cta": "查看全部特辑",
             "cta.title": "准备好开启你的影像传承了吗？",
             "cta.body":
               "预约婚期或了解目的地婚礼方案。我们为真挚而有美感的故事提供定制化记录。",
