@@ -1,655 +1,235 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xiao Studio | Editorial Wedding Photographer</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        color-scheme: light;
-        --bg: #f6f4f2;
-        --fg: #1f1b16;
-        --accent: #b09a84;
-        --accent-dark: #8f7a65;
-        --muted: rgba(31, 27, 22, 0.56);
-        --max-width: 1200px;
-        --letter-spacing-wide: 0.35em;
-        --border-light: rgba(31, 27, 22, 0.12);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
-        background: var(--bg);
-        color: var(--fg);
-        line-height: 1.6;
-        letter-spacing: 0.02em;
-      }
-
-      body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-
-      a {
-        text-decoration: none;
-        color: inherit;
-      }
-
-      header {
-        background: var(--bg);
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        border-bottom: 1px solid var(--border-light);
-      }
-
-      .nav {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        padding: 24px 40px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        text-transform: uppercase;
-        letter-spacing: var(--letter-spacing-wide);
-        font-size: 12px;
-      }
-
-      .logo {
-        font-family: "Playfair Display", serif;
-        font-size: 22px;
-        letter-spacing: 0.28em;
-        font-weight: 500;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 32px;
-      }
-
-      .lang-switch {
-        font-size: 11px;
-        letter-spacing: 0.3em;
-        cursor: pointer;
-      }
-
-      main {
-        flex: 1;
-      }
-
-      .hero {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        max-width: var(--max-width);
-        margin: 120px auto 80px;
-        padding: 0 40px;
-        gap: 40px;
-      }
-
-      .hero-copy {
-        grid-column: span 5;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-      }
-
-      .hero-copy h1 {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(42px, 4.2vw, 62px);
-        font-weight: 500;
-        letter-spacing: 0.1em;
-        line-height: 1.1;
-        margin: 0 0 32px;
-        text-transform: uppercase;
-      }
-
-      .hero-copy p {
-        font-size: 15px;
-        color: var(--muted);
-        text-transform: uppercase;
-        letter-spacing: 0.32em;
-        margin: 0 0 48px;
-      }
-
-      .hero-copy .cta {
-        display: inline-flex;
-        align-items: center;
-        gap: 16px;
-        text-transform: uppercase;
-        letter-spacing: 0.28em;
-        font-size: 11px;
-        position: relative;
-      }
-
-      .hero-copy .cta::after {
-        content: "";
-        height: 1px;
-        width: 120px;
-        background: var(--accent);
-        display: inline-block;
-        transition: width 0.3s ease;
-      }
-
-      .hero-copy .cta:hover::after {
-        width: 150px;
-      }
-
-      .hero-gallery {
-        grid-column: span 7;
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 20px;
-        align-items: center;
-      }
-
-      .hero-gallery img {
-        width: 100%;
-        object-fit: cover;
-        border-radius: 2px;
-        filter: saturate(0.85);
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-      }
-
-      .hero-gallery img:nth-child(1) {
-        grid-column: 1 / 4;
-        aspect-ratio: 3 / 4;
-      }
-
-      .hero-gallery img:nth-child(2) {
-        grid-column: 4 / 7;
-        aspect-ratio: 4 / 5;
-        transform: translateY(40px);
-      }
-
-      .hero-gallery img:nth-child(3) {
-        grid-column: 2 / 6;
-        aspect-ratio: 16 / 10;
-        transform: translateY(-40px);
-      }
-
-      .tagline {
-        max-width: var(--max-width);
-        margin: 0 auto 120px;
-        padding: 0 40px;
-        text-align: center;
-      }
-
-      .tagline h2 {
-        font-family: "Playfair Display", serif;
-        font-size: 36px;
-        letter-spacing: 0.28em;
-        margin: 0 0 24px;
-        text-transform: uppercase;
-      }
-
-      .tagline p {
-        max-width: 680px;
-        margin: 0 auto;
-        font-size: 15px;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
-
-      .portfolio {
-        background: #fdfbf8;
-        padding: 120px 0;
-        border-top: 1px solid var(--border-light);
-        border-bottom: 1px solid var(--border-light);
-      }
-
-      .portfolio-inner {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        padding: 0 40px;
-      }
-
-      .section-label {
-        font-size: 11px;
-        letter-spacing: 0.35em;
-        text-transform: uppercase;
-        color: var(--accent-dark);
-        display: block;
-        margin-bottom: 16px;
-      }
-
-      .portfolio-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 60px;
-        gap: 40px;
-      }
-
-      .portfolio-header h3 {
-        font-family: "Playfair Display", serif;
-        font-size: 40px;
-        letter-spacing: 0.18em;
-        margin: 0;
-        text-transform: uppercase;
-      }
-
-      .portfolio-header p {
-        max-width: 360px;
-        font-size: 14px;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 24px;
-      }
-
-      .portfolio-card {
-        position: relative;
-        overflow: hidden;
-        border-radius: 2px;
-        grid-column: span 6;
-        background: #e9e4dc;
-      }
-
-      .portfolio-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.6s ease;
-        filter: saturate(0.92) contrast(1.05);
-      }
-
-      .portfolio-card:hover img {
-        transform: scale(1.06);
-      }
-
-      .portfolio-card .card-meta {
-        position: absolute;
-        bottom: 20px;
-        left: 24px;
-        background: rgba(255, 255, 255, 0.72);
-        padding: 14px 18px;
-        text-transform: uppercase;
-        letter-spacing: 0.3em;
-        font-size: 11px;
-        color: var(--accent-dark);
-      }
-
-      .portfolio-card:nth-child(2),
-      .portfolio-card:nth-child(3) {
-        grid-column: span 4;
-      }
-
-      .portfolio-card:nth-child(4) {
-        grid-column: span 8;
-      }
-
-      .testimonial {
-        background: #f3eee7;
-        padding: 120px 40px;
-      }
-
-      .testimonial-inner {
-        max-width: 760px;
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .testimonial blockquote {
-        font-family: "Playfair Display", serif;
-        font-size: 30px;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        margin: 0 0 24px;
-      }
-
-      .testimonial cite {
-        display: block;
-        letter-spacing: 0.28em;
-        font-size: 12px;
-        text-transform: uppercase;
-        color: var(--accent-dark);
-      }
-
-      .cta-banner {
-        background: #ede6de;
-        padding: 100px 40px;
-        margin: 120px 0 0;
-      }
-
-      .cta-banner-inner {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        text-align: center;
-      }
-
-      .cta-banner h4 {
-        font-family: "Playfair Display", serif;
-        letter-spacing: 0.22em;
-        text-transform: uppercase;
-        font-size: 28px;
-        margin: 0 0 18px;
-      }
-
-      .cta-banner p {
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        font-size: 13px;
-        color: var(--muted);
-        margin: 0 0 24px;
-      }
-
-      .cta-banner a {
-        display: inline-block;
-        border: 1px solid var(--accent);
-        padding: 18px 36px;
-        letter-spacing: 0.3em;
-        text-transform: uppercase;
-        font-size: 12px;
-        transition: background 0.3s ease, color 0.3s ease;
-      }
-
-      .cta-banner a:hover {
-        background: var(--accent);
-        color: #fff;
-      }
-
-      footer {
-        border-top: 1px solid var(--border-light);
-        padding: 60px 40px;
-        background: #f9f6f2;
-      }
-
-      .footer-inner {
-        max-width: var(--max-width);
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 32px;
-        text-transform: uppercase;
-        letter-spacing: 0.28em;
-        font-size: 11px;
-      }
-
-      .footer-logo {
-        grid-column: span 4;
-        font-family: "Playfair Display", serif;
-        letter-spacing: 0.32em;
-        font-size: 16px;
-      }
-
-      .footer-nav {
-        grid-column: span 4;
-        display: grid;
-        gap: 12px;
-      }
-
-      .footer-locations {
-        grid-column: span 4;
-        display: grid;
-        gap: 12px;
-        color: var(--muted);
-      }
-
-      @media (max-width: 1080px) {
-        .hero,
-        .portfolio-card,
-        .portfolio-card:nth-child(2),
-        .portfolio-card:nth-child(3),
-        .portfolio-card:nth-child(4) {
-          grid-column: span 6;
-        }
-      }
-
-      @media (max-width: 860px) {
-        .nav {
-          flex-direction: column;
-          gap: 16px;
-        }
-
-        .nav-links {
-          gap: 18px;
-        }
-
-        .hero-gallery {
-          order: -1;
-        }
-      }
-
-      @media (max-width: 720px) {
-        .nav {
-          padding: 24px 20px;
-        }
-
-        .hero,
-        .tagline,
-        .portfolio-inner,
-        .cta-banner,
-        footer {
-          padding: 0 20px;
-        }
-
-        .hero {
-          margin-top: 60px;
-        }
-
-        .portfolio {
-          padding: 80px 0;
-        }
-
-        .footer-inner {
-          grid-template-columns: repeat(4, 1fr);
-          gap: 18px;
-        }
-
-        .footer-logo,
-        .footer-nav,
-        .footer-locations {
-          grid-column: span 4;
-        }
-      }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="摄影师作品集｜高级感与自然美学的影像呈现">
+    <meta name="theme-color" content="#0b0b0b">
+    <title>摄影作品集｜Xiao Photo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&family=Fraunces:opsz,wght@9..144,300..700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="icon" href="/favicon.ico">
   </head>
   <body>
-    <header>
-      <nav class="nav">
-        <div class="logo">XIAO STUDIO</div>
-        <div class="nav-links">
-          <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-          <a href="#contact" data-i18n="nav.contact">Contact</a>
-        </div>
-        <div class="lang-switch" id="langToggle" aria-label="Toggle language">EN | 中文</div>
-      </nav>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p data-i18n="hero.kicker">Editorial elegance meets luminous storytelling</p>
-          <h1 data-i18n="hero.title">
-            Montreal & Provence Wedding Photographer For Modern, Joy-Filled
-            Celebrations
-          </h1>
-          <a class="cta" href="#portfolio" data-i18n="hero.cta"> Discover the stories </a>
-        </div>
-        <div class="hero-gallery">
-          <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=900&q=80" alt="Bride portrait" />
-          <img src="https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=900&q=80" alt="Wedding couple" />
-          <img src="https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=1200&q=80" alt="Wedding tablescape" />
-        </div>
-      </section>
-
-      <section class="tagline">
-        <h2 data-i18n="tagline.title">Your legacy of cherished memories begins here</h2>
-        <p data-i18n="tagline.body">
-          Sophisticated portraiture and luminous documentary imagery that embody
-          the joy, elegance, and heartfelt moments unique to your celebration.
-        </p>
-      </section>
-
-      <section class="portfolio" id="portfolio">
-        <div class="portfolio-inner">
-          <span class="section-label" data-i18n="portfolio.label">Love stories by Xiao</span>
-          <div class="portfolio-header">
-            <h3 data-i18n="portfolio.title">Featured Galleries</h3>
-            <p data-i18n="portfolio.subtitle">
-              Refined editorial narratives crafted in Montreal, Provence, and
-              destinations worldwide for couples who believe in timeless artistry.
-            </p>
-          </div>
-          <div class="grid">
-            <div class="portfolio-card">
-              <img src="https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=1300&q=80" alt="Château wedding" />
-              <div class="card-meta">Amy & Paul — Provence Château</div>
-            </div>
-            <div class="portfolio-card">
-              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Downtown wedding" />
-              <div class="card-meta">Grace & Hao — Montreal Musee</div>
-            </div>
-            <div class="portfolio-card">
-              <img src="https://images.unsplash.com/photo-1520854221050-0f4caff449fb?auto=format&fit=crop&w=900&q=80" alt="Banff wedding" />
-              <div class="card-meta">Chloe & Ethan — Banff Peaks</div>
-            </div>
-            <div class="portfolio-card">
-              <img src="https://images.unsplash.com/photo-1543248939-ff40856f65d4?auto=format&fit=crop&w=1400&q=80" alt="Cape town wedding" />
-              <div class="card-meta">Isabella & Noah — Seaside Reverie</div>
+    <div class="site">
+      <header class="site-header" data-header>
+        <a class="brand" href="#top" aria-label="Xiao Photo">XIAO PHOTO</a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+        <nav class="overlay-nav" data-overlay>
+          <div class="overlay-nav__inner">
+            <ul class="overlay-nav__list">
+              <li><a href="#skin" data-navlink>肌肤<span class="en">Skin</span></a></li>
+              <li><a href="#scent" data-navlink>香气<span class="en">Scent</span></a></li>
+              <li><a href="#companions" data-navlink>伴生<span class="en">Companions</span></a></li>
+              <li><a href="#flavor" data-navlink>风味<span class="en">Flavor</span></a></li>
+              <li><a href="#life" data-navlink>空间<span class="en">Space</span></a></li>
+              <li><a href="#contact" data-navlink>联系方式<span class="en">Contact</span></a></li>
+            </ul>
+            <div class="overlay-nav__footer">
+              <p>©2025 Xiao Photo</p>
             </div>
           </div>
+        </nav>
+      </header>
+
+      <main id="top">
+        <!-- HERO -->
+        <section class="hero" aria-label="Hero">
+          <div class="hero__slides" data-hero>
+            <div class="hero__slide is-active" style="background-image:url('./spaces/202ED07C-B929-4EB5-9353-8F9F55CBF8FF_1_105_c.jpeg');"></div>
+            <div class="hero__slide" style="background-image:url('./spaces/734A5C94-A27B-4A23-86A4-310E41C8FD78_1_105_c.jpeg');"></div>
+            <div class="hero__slide" style="background-image:url('./spaces/7D604FF1-82BB-4B3E-9A3F-B59B7BFCDC47_1_105_c.jpeg');"></div>
+            <div class="hero__slide" style="background-image:url('./spaces/A01E630A-9EBC-4725-8066-57D2D4C10CF8_4_5005_c.jpeg');"></div>
+            <div class="hero__slide" style="background-image:url('./spaces/CDDF3568-67ED-47DE-8219-3A47A0CD8EED_4_5005_c.jpeg');"></div>
+            <div class="hero__slide" style="background-image:url('./spaces/D4E1B016-CCAE-4FA7-B041-57F9CE439009_1_105_c.jpeg');"></div>
+          </div>
+          <div class="hero__content container">
+            <h1 class="display display--cn">关于瞬间片刻</h1>
+            <p class="kicker">On Fleeting Moments</p>
+          </div>
+          <div class="hero__down">
+            <a href="#work" class="scroll-down" aria-label="Scroll to works">SCROLL</a>
+          </div>
+        </section>
+
+        <!-- FEATURED / CATEGORIES -->
+        <section id="work" class="section section--tight">
+          <div class="container">
+            <div class="section__head">
+              <h2 class="eyebrow">精选</h2>
+              <p class="lead">关于瞬间片刻的五个主题：肌肤、气味、同伴、风味、生活。</p>
+            </div>
+          </div>
+          <div class="mosaic">
+            <a class="mosaic__card mosaic__card--tall" href="#skin" style="background-image:url('./skincare/02CD964B-4A4A-4DB7-83F6-936863C28E73_1_105_c.jpeg');">
+              <div class="mosaic__overlay">
+                <span>肌肤</span>
+              </div>
+            </a>
+            <a class="mosaic__card" href="#scent" style="background-image:url('./perfume/1A1CCEB2-02B3-480E-A934-EA05EE6B5855_4_5005_c.jpeg');">
+              <div class="mosaic__overlay">
+                <span>香气</span>
+              </div>
+            </a>
+            <a class="mosaic__card" href="#companions" style="background-image:url('./pet/BFBFD609-C797-4BA1-AB42-33FB97E60213_4_5005_c.jpeg');">
+              <div class="mosaic__overlay">
+                <span>伴生</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- SKIN -->
+        <section id="skin" class="section">
+          <div class="container section__head">
+            <h2>肌肤<span class="en">Skin</span></h2>
+            <p class="subtle">美妆与护肤产品摄影</p>
+            <p class="subtle">Beauty &amp; Skincare Product Photography</p>
+            <p class="divider">⸻</p>
+          </div>
+          <div class="gallery-grid" data-gallery="skin">
+            <div class="gallery-grid__item"><img src="./skincare/02CD964B-4A4A-4DB7-83F6-936863C28E73_1_105_c.jpeg" alt="Skincare 1"></div>
+            <div class="gallery-grid__item"><img src="./skincare/8A8808B7-B82F-4810-A251-8698D9352968_1_105_c.jpeg" alt="Skincare 2"></div>
+            <div class="gallery-grid__item"><img src="./skincare/9D4B315C-E4F0-4EE8-A6B0-5AF89D5EC5A1_1_105_c.jpeg" alt="Skincare 3"></div>
+            <div class="gallery-grid__item"><img src="./skincare/D15F3337-E032-4790-B01B-4937B3687458_1_105_c.jpeg" alt="Skincare 4"></div>
+            <div class="gallery-grid__item"><img src="./skincare/E178A88B-9AAC-4F58-8DAD-6214B415B3F1.jpeg" alt="Skincare 5"></div>
+          </div>
+        </section>
+
+        <!-- SCENT -->
+        <section id="scent" class="section section--alt">
+          <div class="container section__head">
+            <h2>香气<span class="en">Scent</span></h2>
+            <p class="subtle">香水与香氛产品摄影</p>
+            <p class="subtle">Fragrance &amp; Perfume Photography</p>
+            <p class="divider">⸻</p>
+          </div>
+          <div class="gallery-grid" data-gallery="scent">
+            <div class="gallery-grid__item"><img src="./perfume/1A1CCEB2-02B3-480E-A934-EA05EE6B5855_4_5005_c.jpeg" alt="Perfume bottle 1"></div>
+            <div class="gallery-grid__item"><img src="./perfume/1AED6424-50F1-49B1-AF5F-69F1A89D04DE_4_5005_c.jpeg" alt="Perfume bottle 2"></div>
+            <div class="gallery-grid__item"><img src="./perfume/2514E800-B721-432A-A130-B13AB582CB26_4_5005_c.jpeg" alt="Perfume bottle 3"></div>
+            <div class="gallery-grid__item"><img src="./perfume/2659868A-B814-48D9-AB2E-C69D54CE6654_4_5005_c.jpeg" alt="Perfume bottle 4"></div>
+            <div class="gallery-grid__item"><img src="./perfume/6CC09CAE-38E7-4507-8830-652097A4D068_4_5005_c.jpeg" alt="Perfume bottle 5"></div>
+          </div>
+        </section>
+
+        <!-- COMPANIONS -->
+        <section id="companions" class="section">
+          <div class="container section__head">
+            <h2>伴生<span class="en">Companions</span></h2>
+            <p class="subtle">宠物用品与宠物相关产品摄影</p>
+            <p class="subtle">Pet Products Photography</p>
+            <p class="divider">⸻</p>
+          </div>
+          <div class="gallery-grid" data-gallery="companions">
+            <div class="gallery-grid__item"><img src="./pet/BFBFD609-C797-4BA1-AB42-33FB97E60213_4_5005_c.jpeg" alt="Pet 1"></div>
+            <div class="gallery-grid__item"><img src="./pet/C0482E60-A241-43FF-8EFA-98A01C6E0B70_4_5005_c.jpeg" alt="Pet 2"></div>
+            <div class="gallery-grid__item"><img src="./pet/C9332F08-1BD8-4A28-8D72-70008CDA2280_4_5005_c.jpeg" alt="Pet 3"></div>
+            <div class="gallery-grid__item"><img src="./pet/E5B0782F-E3C0-430A-B816-B92B6A14B8E7_4_5005_c.jpeg" alt="Pet 4"></div>
+          </div>
+        </section>
+
+        <!-- FLAVOR -->
+        <section id="flavor" class="section section--alt">
+          <div class="container section__head">
+            <h2>风味<span class="en">Flavor</span></h2>
+            <p class="subtle">食品与饮料产品摄影</p>
+            <p class="subtle">Food &amp; Beverage Photography</p>
+            <p class="divider">⸻</p>
+          </div>
+          <div class="gallery-grid" data-gallery="flavor">
+            <div class="gallery-grid__item"><img src="./food/95526C12-80F5-437A-82B2-302C00716C21_1_105_c.jpeg" alt="Food 1"></div>
+            <div class="gallery-grid__item"><img src="./food/A8F1A557-D9E5-4D4A-807A-DC8BA5C493C6_1_105_c.jpeg" alt="Food 2"></div>
+            <div class="gallery-grid__item"><img src="./food/D18A004D-5248-4034-8959-E4BC1ABBB6E0_1_105_c.jpeg" alt="Food 3"></div>
+            <div class="gallery-grid__item"><img src="./food/D6D53973-7934-4CBF-88FA-817AE69B206B_1_105_c.jpeg" alt="Food 4"></div>
+          </div>
+        </section>
+
+        <!-- LIFE -->
+        <section id="life" class="section">
+          <div class="container section__head">
+            <h2>空间<span class="en">Space</span></h2>
+            <p class="subtle">家居、生活方式与场景摄影</p>
+            <p class="subtle">Lifestyle &amp; Home Photography</p>
+            <p class="divider">⸻</p>
+          </div>
+          <div class="gallery-grid" data-gallery="life">
+            <div class="gallery-grid__item"><img src="./spaces/202ED07C-B929-4EB5-9353-8F9F55CBF8FF_1_105_c.jpeg" alt="Spaces 1"></div>
+            <div class="gallery-grid__item"><img src="./spaces/734A5C94-A27B-4A23-86A4-310E41C8FD78_1_105_c.jpeg" alt="Spaces 2"></div>
+            <div class="gallery-grid__item"><img src="./spaces/7D604FF1-82BB-4B3E-9A3F-B59B7BFCDC47_1_105_c.jpeg" alt="Spaces 3"></div>
+            <div class="gallery-grid__item"><img src="./spaces/A01E630A-9EBC-4725-8066-57D2D4C10CF8_4_5005_c.jpeg" alt="Spaces 4"></div>
+            <div class="gallery-grid__item"><img src="./spaces/CDDF3568-67ED-47DE-8219-3A47A0CD8EED_4_5005_c.jpeg" alt="Spaces 5"></div>
+            <div class="gallery-grid__item"><img src="./spaces/D4E1B016-CCAE-4FA7-B041-57F9CE439009_1_105_c.jpeg" alt="Spaces 6"></div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="section section--tight section--alt">
+          <div class="container">
+            <div class="about-text-center">
+              <p>专注于产品视觉创作，长期为品牌拍摄 宠物用品、香水、护肤品 等品类。</p>
+              <p class="en">Specialized in product visual creation, focusing on pet products, fragrances, and skincare.</p>
+              <p>工作以“呈现物的质感与气息”为核心，通过光线、结构与细节构建产品的独特气质。</p>
+              <p class="en">My work centers on conveying texture, light, and quiet detail to shape the aesthetic character of each object.</p>
+              <p>擅长从概念到成片的完整视觉执行，包括前期沟通、场景设计、拍摄与后期处理，</p>
+              <p class="en">Experienced in full-process production—from concept development to styling, shooting, and post-production—</p>
+              <p>为品牌提供清洁、克制且具有审美辨识度的产品影像。</p>
+              <p class="en">I create clean, restrained, and distinctly atmospheric visuals for brands.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+          <div class="container contact contact--icons-only">
+            <div class="contact__socials">
+              <a class="contact__icon" href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram" data-tooltip="打开 Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                  <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                  <circle cx="17.4" cy="6.6" r="1.4" fill="currentColor" stroke="none"/>
+                </svg>
+              </a>
+              <a class="contact__icon" href="#" aria-label="WeChat" data-tooltip="扫描 WeChat">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7.8 6.2c-3 0-5.3 2-5.3 4.7 0 1.7 1 3.2 2.6 4.1l-.6 2.2 2.5-1.4c.3 0 .6.1.9.1 3 0 5.3-2 5.3-4.7S10.8 6.2 7.8 6.2Zm-2 3.4c.5 0 .8.3.8.7s-.4.7-.8.7-.7-.3-.7-.7.3-.7.7-.7Zm4 1.4c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.8.3.8.7-.4.7-.8.7ZM16.2 9c-3 0-5.3 2-5.3 4.7 0 1.6 1 3.1 2.5 4.1l-.5 2.1 2.2-1.3h.9c3 0 5.3-2 5.3-4.7S19.2 9 16.2 9Zm-2 3.3c.5 0 .8.3.8.7s-.4.7-.8.7-.7-.3-.7-.7.3-.7.7-.7Zm4.1 1.4c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7Z" fill="currentColor"/>
+                </svg>
+              </a>
+              <a class="contact__icon" href="mailto:hello@example.com" aria-label="Email" data-tooltip="发送邮件">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                  <polyline points="4 6 12 12 20 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container footer__inner">
+          <p>©2025 Xiao Photo ｜ 所有图片版权归原作者所有</p>
+          <a class="to-top" href="#top">回到顶部</a>
         </div>
-      </section>
+      </footer>
+    </div>
 
-      <section class="testimonial">
-        <div class="testimonial-inner">
-          <blockquote data-i18n="testimonial.quote">
-            "Even with a soft rainfall, Xiao found the glow in every moment. Our
-            gallery feels like a beautifully written love letter."
-          </blockquote>
-          <cite data-i18n="testimonial.author">— Grace & Hao</cite>
-        </div>
-      </section>
-
-    </main>
-
-    <section class="cta-banner" id="contact">
-      <div class="cta-banner-inner">
-        <h4 data-i18n="cta.title">Are you ready to begin your visual legacy?</h4>
-        <p data-i18n="cta.body">
-          Reserve your wedding date or inquire for your destination celebration.
-          We craft bespoke coverage for heartfelt, artful stories.
-        </p>
-        <a href="mailto:hello@xiaostudio.com" data-i18n="cta.button">Inquire Now</a>
+    <div class="lightbox" data-lightbox>
+      <button class="lightbox__nav lightbox__nav--prev" aria-label="Previous image" data-lightbox-prev>&#10094;</button>
+      <div class="lightbox__inner">
+        <img src="" alt="" data-lightbox-img>
+        <button class="lightbox__close" aria-label="Close">&times;</button>
       </div>
-    </section>
+      <button class="lightbox__nav lightbox__nav--next" aria-label="Next image" data-lightbox-next>&#10095;</button>
+    </div>
 
-    <footer>
-      <div class="footer-inner">
-        <div class="footer-logo">XIAO STUDIO</div>
-        <div class="footer-nav">
-          <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-          <a href="#contact" data-i18n="nav.contact">Contact</a>
-        </div>
-        <div class="footer-locations">
-          <span>Montreal | Toronto | Provence | Worldwide</span>
-          <span>@xiao.photography</span>
-          <span>© 2025 Xiao Studio</span>
-        </div>
-      </div>
-    </footer>
-    <script>
-      (function () {
-        const dict = {
-          en: {
-            "nav.portfolio": "Portfolio",
-            "nav.contact": "Contact",
-            "hero.kicker": "Editorial elegance meets luminous storytelling",
-            "hero.title":
-              "Montreal & Provence Wedding Photographer For Modern, Joy-Filled Celebrations",
-            "hero.cta": "Discover the stories",
-            "tagline.title": "Your legacy of cherished memories begins here",
-            "tagline.body":
-              "Sophisticated portraiture and luminous documentary imagery that embody the joy, elegance, and heartfelt moments unique to your celebration.",
-            "portfolio.label": "Love stories by Xiao",
-            "portfolio.title": "Featured Galleries",
-            "portfolio.subtitle":
-              "Refined editorial narratives crafted in Montreal, Provence, and destinations worldwide for couples who believe in timeless artistry.",
-            "testimonial.quote":
-              "Even with a soft rainfall, Xiao found the glow in every moment. Our gallery feels like a beautifully written love letter.",
-            "testimonial.author": "— Grace & Hao",
-            "cta.title": "Are you ready to begin your visual legacy?",
-            "cta.body":
-              "Reserve your wedding date or inquire for your destination celebration. We craft bespoke coverage for heartfelt, artful stories.",
-            "cta.button": "Inquire Now",
-          },
-          zh: {
-            "nav.portfolio": "作品集",
-            "nav.contact": "联系",
-            "hero.kicker": "编辑级优雅与电影感叙事",
-            "hero.title": "为现代而喜悦的婚礼创作——蒙特利尔与普罗旺斯",
-            "hero.cta": "探索更多故事",
-            "tagline.title": "你的纪念影像，从此刻成为传家之作",
-            "tagline.body":
-              "以精致的人像与通透纪实，凝练属于你们的优雅、喜悦与每个动人瞬间。",
-            "portfolio.label": "Xiao 的爱情故事",
-            "portfolio.title": "精选影集",
-            "portfolio.subtitle":
-              "于蒙特利尔、普罗旺斯与全球目的地创作精致叙事，为珍视艺术性的新人而生。",
-            "testimonial.quote":
-              "即便在细雨中，Xiao 也为每个瞬间找到光。我们的相册像一封写给爱情的优美书信。",
-            "testimonial.author": "— Grace 与 Hao",
-            "cta.title": "准备好开启你的影像传承了吗？",
-            "cta.body":
-              "预约婚期或了解目的地婚礼方案。我们为真挚而有美感的故事提供定制化记录。",
-            "cta.button": "咨询档期",
-          },
-        };
-
-        const langStorageKey = "xiao_lang";
-        const toggle = document.getElementById("langToggle");
-        const htmlEl = document.documentElement;
-
-        function applyLang(lang) {
-          const set = dict[lang] || dict.en;
-          document.querySelectorAll("[data-i18n]").forEach((el) => {
-            const key = el.getAttribute("data-i18n");
-            if (set[key]) {
-              el.textContent = set[key];
-            }
-          });
-          htmlEl.setAttribute("lang", lang === "zh" ? "zh-CN" : "en");
-          localStorage.setItem(langStorageKey, lang);
-          // Visual hint in toggle
-          if (toggle) {
-            toggle.textContent = lang === "zh" ? "中文 | EN" : "EN | 中文";
-          }
-        }
-
-        const initial =
-          localStorage.getItem(langStorageKey) ||
-          (navigator.language || "").toLowerCase().startsWith("zh")
-            ? "zh"
-            : "en";
-        applyLang(initial);
-
-        if (toggle) {
-          toggle.addEventListener("click", () => {
-            const current = localStorage.getItem(langStorageKey) || "en";
-            applyLang(current === "en" ? "zh" : "en");
-          });
-        }
-      })();
-    </script>
+    <script src="./scripts/main.js" defer></script>
   </body>
 </html>
+
 
