@@ -1,235 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="摄影师作品集｜高级感与自然美学的影像呈现">
-    <meta name="theme-color" content="#0b0b0b">
-    <title>摄影作品集｜Xiao Photo</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XIAO PHOTO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&family=Fraunces:opsz,wght@9..144,300..700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/main.css">
-    <link rel="icon" href="/favicon.ico">
-  </head>
-  <body>
-    <div class="site">
-      <header class="site-header" data-header>
-        <a class="brand" href="#top" aria-label="Xiao Photo">XIAO PHOTO</a>
-        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" data-nav-toggle>
-          <span class="nav-toggle__bar"></span>
-          <span class="nav-toggle__bar"></span>
-        </button>
-        <nav class="overlay-nav" data-overlay>
-          <div class="overlay-nav__inner">
-            <ul class="overlay-nav__list">
-              <li><a href="#skin" data-navlink>肌肤<span class="en">Skin</span></a></li>
-              <li><a href="#scent" data-navlink>香气<span class="en">Scent</span></a></li>
-              <li><a href="#companions" data-navlink>伴生<span class="en">Companions</span></a></li>
-              <li><a href="#flavor" data-navlink>风味<span class="en">Flavor</span></a></li>
-              <li><a href="#life" data-navlink>空间<span class="en">Space</span></a></li>
-              <li><a href="#contact" data-navlink>联系方式<span class="en">Contact</span></a></li>
-            </ul>
-            <div class="overlay-nav__footer">
-              <p>©2025 Xiao Photo</p>
-            </div>
-          </div>
-        </nav>
-      </header>
-
-      <main id="top">
-        <!-- HERO -->
-        <section class="hero" aria-label="Hero">
-          <div class="hero__slides" data-hero>
-            <div class="hero__slide is-active" style="background-image:url('./spaces/202ED07C-B929-4EB5-9353-8F9F55CBF8FF_1_105_c.jpeg');"></div>
-            <div class="hero__slide" style="background-image:url('./spaces/734A5C94-A27B-4A23-86A4-310E41C8FD78_1_105_c.jpeg');"></div>
-            <div class="hero__slide" style="background-image:url('./spaces/7D604FF1-82BB-4B3E-9A3F-B59B7BFCDC47_1_105_c.jpeg');"></div>
-            <div class="hero__slide" style="background-image:url('./spaces/A01E630A-9EBC-4725-8066-57D2D4C10CF8_4_5005_c.jpeg');"></div>
-            <div class="hero__slide" style="background-image:url('./spaces/CDDF3568-67ED-47DE-8219-3A47A0CD8EED_4_5005_c.jpeg');"></div>
-            <div class="hero__slide" style="background-image:url('./spaces/D4E1B016-CCAE-4FA7-B041-57F9CE439009_1_105_c.jpeg');"></div>
-          </div>
-          <div class="hero__content container">
-            <h1 class="display display--cn">关于瞬间片刻</h1>
-            <p class="kicker">On Fleeting Moments</p>
-          </div>
-          <div class="hero__down">
-            <a href="#work" class="scroll-down" aria-label="Scroll to works">SCROLL</a>
-          </div>
-        </section>
-
-        <!-- FEATURED / CATEGORIES -->
-        <section id="work" class="section section--tight">
-          <div class="container">
-            <div class="section__head">
-              <h2 class="eyebrow">精选</h2>
-              <p class="lead">关于瞬间片刻的五个主题：肌肤、气味、同伴、风味、生活。</p>
-            </div>
-          </div>
-          <div class="mosaic">
-            <a class="mosaic__card mosaic__card--tall" href="#skin" style="background-image:url('./skincare/02CD964B-4A4A-4DB7-83F6-936863C28E73_1_105_c.jpeg');">
-              <div class="mosaic__overlay">
-                <span>肌肤</span>
-              </div>
-            </a>
-            <a class="mosaic__card" href="#scent" style="background-image:url('./perfume/1A1CCEB2-02B3-480E-A934-EA05EE6B5855_4_5005_c.jpeg');">
-              <div class="mosaic__overlay">
-                <span>香气</span>
-              </div>
-            </a>
-            <a class="mosaic__card" href="#companions" style="background-image:url('./pet/BFBFD609-C797-4BA1-AB42-33FB97E60213_4_5005_c.jpeg');">
-              <div class="mosaic__overlay">
-                <span>伴生</span>
-              </div>
-            </a>
-          </div>
-        </section>
-
-        <!-- SKIN -->
-        <section id="skin" class="section">
-          <div class="container section__head">
-            <h2>肌肤<span class="en">Skin</span></h2>
-            <p class="subtle">美妆与护肤产品摄影</p>
-            <p class="subtle">Beauty &amp; Skincare Product Photography</p>
-            <p class="divider">⸻</p>
-          </div>
-          <div class="gallery-grid" data-gallery="skin">
-            <div class="gallery-grid__item"><img src="./skincare/02CD964B-4A4A-4DB7-83F6-936863C28E73_1_105_c.jpeg" alt="Skincare 1"></div>
-            <div class="gallery-grid__item"><img src="./skincare/8A8808B7-B82F-4810-A251-8698D9352968_1_105_c.jpeg" alt="Skincare 2"></div>
-            <div class="gallery-grid__item"><img src="./skincare/9D4B315C-E4F0-4EE8-A6B0-5AF89D5EC5A1_1_105_c.jpeg" alt="Skincare 3"></div>
-            <div class="gallery-grid__item"><img src="./skincare/D15F3337-E032-4790-B01B-4937B3687458_1_105_c.jpeg" alt="Skincare 4"></div>
-            <div class="gallery-grid__item"><img src="./skincare/E178A88B-9AAC-4F58-8DAD-6214B415B3F1.jpeg" alt="Skincare 5"></div>
-          </div>
-        </section>
-
-        <!-- SCENT -->
-        <section id="scent" class="section section--alt">
-          <div class="container section__head">
-            <h2>香气<span class="en">Scent</span></h2>
-            <p class="subtle">香水与香氛产品摄影</p>
-            <p class="subtle">Fragrance &amp; Perfume Photography</p>
-            <p class="divider">⸻</p>
-          </div>
-          <div class="gallery-grid" data-gallery="scent">
-            <div class="gallery-grid__item"><img src="./perfume/1A1CCEB2-02B3-480E-A934-EA05EE6B5855_4_5005_c.jpeg" alt="Perfume bottle 1"></div>
-            <div class="gallery-grid__item"><img src="./perfume/1AED6424-50F1-49B1-AF5F-69F1A89D04DE_4_5005_c.jpeg" alt="Perfume bottle 2"></div>
-            <div class="gallery-grid__item"><img src="./perfume/2514E800-B721-432A-A130-B13AB582CB26_4_5005_c.jpeg" alt="Perfume bottle 3"></div>
-            <div class="gallery-grid__item"><img src="./perfume/2659868A-B814-48D9-AB2E-C69D54CE6654_4_5005_c.jpeg" alt="Perfume bottle 4"></div>
-            <div class="gallery-grid__item"><img src="./perfume/6CC09CAE-38E7-4507-8830-652097A4D068_4_5005_c.jpeg" alt="Perfume bottle 5"></div>
-          </div>
-        </section>
-
-        <!-- COMPANIONS -->
-        <section id="companions" class="section">
-          <div class="container section__head">
-            <h2>伴生<span class="en">Companions</span></h2>
-            <p class="subtle">宠物用品与宠物相关产品摄影</p>
-            <p class="subtle">Pet Products Photography</p>
-            <p class="divider">⸻</p>
-          </div>
-          <div class="gallery-grid" data-gallery="companions">
-            <div class="gallery-grid__item"><img src="./pet/BFBFD609-C797-4BA1-AB42-33FB97E60213_4_5005_c.jpeg" alt="Pet 1"></div>
-            <div class="gallery-grid__item"><img src="./pet/C0482E60-A241-43FF-8EFA-98A01C6E0B70_4_5005_c.jpeg" alt="Pet 2"></div>
-            <div class="gallery-grid__item"><img src="./pet/C9332F08-1BD8-4A28-8D72-70008CDA2280_4_5005_c.jpeg" alt="Pet 3"></div>
-            <div class="gallery-grid__item"><img src="./pet/E5B0782F-E3C0-430A-B816-B92B6A14B8E7_4_5005_c.jpeg" alt="Pet 4"></div>
-          </div>
-        </section>
-
-        <!-- FLAVOR -->
-        <section id="flavor" class="section section--alt">
-          <div class="container section__head">
-            <h2>风味<span class="en">Flavor</span></h2>
-            <p class="subtle">食品与饮料产品摄影</p>
-            <p class="subtle">Food &amp; Beverage Photography</p>
-            <p class="divider">⸻</p>
-          </div>
-          <div class="gallery-grid" data-gallery="flavor">
-            <div class="gallery-grid__item"><img src="./food/95526C12-80F5-437A-82B2-302C00716C21_1_105_c.jpeg" alt="Food 1"></div>
-            <div class="gallery-grid__item"><img src="./food/A8F1A557-D9E5-4D4A-807A-DC8BA5C493C6_1_105_c.jpeg" alt="Food 2"></div>
-            <div class="gallery-grid__item"><img src="./food/D18A004D-5248-4034-8959-E4BC1ABBB6E0_1_105_c.jpeg" alt="Food 3"></div>
-            <div class="gallery-grid__item"><img src="./food/D6D53973-7934-4CBF-88FA-817AE69B206B_1_105_c.jpeg" alt="Food 4"></div>
-          </div>
-        </section>
-
-        <!-- LIFE -->
-        <section id="life" class="section">
-          <div class="container section__head">
-            <h2>空间<span class="en">Space</span></h2>
-            <p class="subtle">家居、生活方式与场景摄影</p>
-            <p class="subtle">Lifestyle &amp; Home Photography</p>
-            <p class="divider">⸻</p>
-          </div>
-          <div class="gallery-grid" data-gallery="life">
-            <div class="gallery-grid__item"><img src="./spaces/202ED07C-B929-4EB5-9353-8F9F55CBF8FF_1_105_c.jpeg" alt="Spaces 1"></div>
-            <div class="gallery-grid__item"><img src="./spaces/734A5C94-A27B-4A23-86A4-310E41C8FD78_1_105_c.jpeg" alt="Spaces 2"></div>
-            <div class="gallery-grid__item"><img src="./spaces/7D604FF1-82BB-4B3E-9A3F-B59B7BFCDC47_1_105_c.jpeg" alt="Spaces 3"></div>
-            <div class="gallery-grid__item"><img src="./spaces/A01E630A-9EBC-4725-8066-57D2D4C10CF8_4_5005_c.jpeg" alt="Spaces 4"></div>
-            <div class="gallery-grid__item"><img src="./spaces/CDDF3568-67ED-47DE-8219-3A47A0CD8EED_4_5005_c.jpeg" alt="Spaces 5"></div>
-            <div class="gallery-grid__item"><img src="./spaces/D4E1B016-CCAE-4FA7-B041-57F9CE439009_1_105_c.jpeg" alt="Spaces 6"></div>
-          </div>
-        </section>
-
-        <!-- ABOUT -->
-        <section id="about" class="section section--tight section--alt">
-          <div class="container">
-            <div class="about-text-center">
-              <p>专注于产品视觉创作，长期为品牌拍摄 宠物用品、香水、护肤品 等品类。</p>
-              <p class="en">Specialized in product visual creation, focusing on pet products, fragrances, and skincare.</p>
-              <p>工作以“呈现物的质感与气息”为核心，通过光线、结构与细节构建产品的独特气质。</p>
-              <p class="en">My work centers on conveying texture, light, and quiet detail to shape the aesthetic character of each object.</p>
-              <p>擅长从概念到成片的完整视觉执行，包括前期沟通、场景设计、拍摄与后期处理，</p>
-              <p class="en">Experienced in full-process production—from concept development to styling, shooting, and post-production—</p>
-              <p>为品牌提供清洁、克制且具有审美辨识度的产品影像。</p>
-              <p class="en">I create clean, restrained, and distinctly atmospheric visuals for brands.</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- CONTACT -->
-        <section id="contact" class="section">
-          <div class="container contact contact--icons-only">
-            <div class="contact__socials">
-              <a class="contact__icon" href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram" data-tooltip="打开 Instagram">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-                  <circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-                  <circle cx="17.4" cy="6.6" r="1.4" fill="currentColor" stroke="none"/>
-                </svg>
-              </a>
-              <a class="contact__icon" href="#" aria-label="WeChat" data-tooltip="扫描 WeChat">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7.8 6.2c-3 0-5.3 2-5.3 4.7 0 1.7 1 3.2 2.6 4.1l-.6 2.2 2.5-1.4c.3 0 .6.1.9.1 3 0 5.3-2 5.3-4.7S10.8 6.2 7.8 6.2Zm-2 3.4c.5 0 .8.3.8.7s-.4.7-.8.7-.7-.3-.7-.7.3-.7.7-.7Zm4 1.4c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.8.3.8.7-.4.7-.8.7ZM16.2 9c-3 0-5.3 2-5.3 4.7 0 1.6 1 3.1 2.5 4.1l-.5 2.1 2.2-1.3h.9c3 0 5.3-2 5.3-4.7S19.2 9 16.2 9Zm-2 3.3c.5 0 .8.3.8.7s-.4.7-.8.7-.7-.3-.7-.7.3-.7.7-.7Zm4.1 1.4c-.4 0-.7-.3-.7-.7s.3-.7.7-.7.7.3.7.7-.3.7-.7.7Z" fill="currentColor"/>
-                </svg>
-              </a>
-              <a class="contact__icon" href="mailto:hello@example.com" aria-label="Email" data-tooltip="发送邮件">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
-                  <polyline points="4 6 12 12 20 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <div class="container footer__inner">
-          <p>©2025 Xiao Photo ｜ 所有图片版权归原作者所有</p>
-          <a class="to-top" href="#top">回到顶部</a>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="home-container">
+        <div class="background-image">
+            <img src="background/dsc7367.jpg" alt="Background" class="bg-image-primary">
+            <img src="background/butt.jpg" alt="Background Hover" class="bg-image-hover">
         </div>
-      </footer>
+        <div class="title-container">
+            <h1 class="main-title">
+                <span class="title-default">XIAO PHOTO</span>
+                <span class="title-hover">Welcome.This space is a quiet archive of the moments I choose to hold onto—light, shadow, texture, and the subtle emotion that exists between them. I invite you to look slowly, stay briefly, and feel something real.</span>
+            </h1>
+        </div>
     </div>
 
-    <div class="lightbox" data-lightbox>
-      <button class="lightbox__nav lightbox__nav--prev" aria-label="Previous image" data-lightbox-prev>&#10094;</button>
-      <div class="lightbox__inner">
-        <img src="" alt="" data-lightbox-img>
-        <button class="lightbox__close" aria-label="Close">&times;</button>
-      </div>
-      <button class="lightbox__nav lightbox__nav--next" aria-label="Next image" data-lightbox-next>&#10095;</button>
-    </div>
+    <!-- Work Experience Section -->
+    <section class="work-experience">
+        <h2 class="section-title">Work Experience</h2>
+        <div class="timeline-container">
+            <div class="timeline-card" data-index="0">
+                <div class="card-content">
+                    <h3 class="card-title">星盟</h3>
+                    <p class="card-description"></p>
+                </div>
+            </div>
+            <div class="arrow arrow-1">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="arrow-svg">
+                    <path d="M5 12h14" class="arrow-line"/>
+                    <path d="M12 5l7 7-7 7" class="arrow-head"/>
+                </svg>
+            </div>
+            <div class="timeline-card" data-index="1">
+                <div class="card-content">
+                    <h3 class="card-title">玫得</h3>
+                    <p class="card-description"></p>
+                </div>
+            </div>
+            <div class="arrow arrow-2">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="arrow-svg">
+                    <path d="M19 12H5" class="arrow-line"/>
+                    <path d="M12 19l-7-7 7-7" class="arrow-head"/>
+                </svg>
+            </div>
+            <div class="timeline-card" data-index="2">
+                <div class="card-content">
+                    <h3 class="card-title">多样屋</h3>
+                    <p class="card-description"></p>
+                </div>
+            </div>
+            <div class="arrow arrow-3">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="arrow-svg">
+                    <path d="M5 12h14" class="arrow-line"/>
+                    <path d="M12 5l7 7-7 7" class="arrow-head"/>
+                </svg>
+            </div>
+            <div class="timeline-card" data-index="3">
+                <div class="card-content">
+                    <h3 class="card-title">宠物</h3>
+                    <p class="card-description"></p>
+                </div>
+            </div>
+            <div class="arrow arrow-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="arrow-svg">
+                    <path d="M19 12H5" class="arrow-line"/>
+                    <path d="M12 19l-7-7 7-7" class="arrow-head"/>
+                </svg>
+            </div>
+            <div class="timeline-card" data-index="4">
+                <div class="card-content">
+                    <h3 class="card-title">护肤</h3>
+                    <p class="card-description"></p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="./scripts/main.js" defer></script>
-  </body>
+    <script src="scripts/main.js"></script>
+</body>
 </html>
-
 
