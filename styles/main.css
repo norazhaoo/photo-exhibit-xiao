@@ -149,8 +149,8 @@ body {
 
 /* Work Experience Section */
 .work-experience {
-    min-height: 100vh;
-    padding: 100px 40px;
+    min-height: auto;
+    padding: 60px 20px;
     position: relative;
     overflow: hidden;
 }
@@ -177,37 +177,41 @@ body {
 
 .section-title {
     text-align: center;
-    font-size: 48px;
+    font-size: 36px;
     font-weight: 600;
-    color: #1a3a5c;
-    margin-bottom: 80px;
+    color: #4A90E2;
+    margin-bottom: 50px;
     letter-spacing: 2px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 .timeline-container {
-    max-width: 1400px;
+    max-width: 50%;
     margin: 0 auto;
     position: relative;
-    padding: 60px 0;
+    padding: 30px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 1200px;
 }
 
 .timeline-card {
-    width: 500px;
-    min-height: 200px;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    max-width: 350px;
+    min-height: 180px;
+    padding: 30px;
+    background: rgba(26, 58, 92, 0.85);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    margin: 30px 0;
+    border-radius: 16px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
     opacity: 0;
     transform: translateY(50px) scale(0.9);
     transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
                 transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* 初始状态：只显示第一个 */
@@ -221,7 +225,7 @@ body {
     transform: translateY(0) scale(1);
 }
 
-/* 左右交替布局 - 更居中 */
+/* 左右交替布局 - 在2/3宽度内居中 */
 .timeline-card[data-index="0"],
 .timeline-card[data-index="2"],
 .timeline-card[data-index="4"] {
@@ -247,62 +251,38 @@ body {
 }
 
 .card-title {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 600;
-    color: #1a3a5c;
+    color: #fff;
     margin: 0 0 20px 0;
     letter-spacing: 2px;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 .card-description {
-    font-size: 16px;
-    color: #666;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.8;
     min-height: 80px;
     margin: 0;
 }
 
-/* 箭头样式 - 使用更好的图标 */
+/* 箭头样式 - L型路径从卡片指向下一个卡片 */
 .arrow {
-    width: 120px;
-    height: 60px;
-    margin: 15px auto;
-    color: #1a3a5c;
+    position: absolute;
+    color: #4A90E2;
     opacity: 0;
-    transform: translateY(-20px) scale(0.8);
+    transform: scale(0.8);
     transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s, 
                 transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    z-index: 10;
+    pointer-events: none;
 }
 
 .arrow.visible {
     opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-/* 箭头方向 - 从左到右，连接左侧卡片 */
-.arrow-1,
-.arrow-3 {
-    margin-left: 520px;
-    margin-right: auto;
-    align-self: flex-start;
-}
-
-/* 箭头方向 - 从右到左，连接右侧卡片 */
-.arrow-2,
-.arrow-4 {
-    margin-left: auto;
-    margin-right: 520px;
-    align-self: flex-end;
-    transform: translateY(-20px) scale(0.8);
-}
-
-.arrow-2.visible,
-.arrow-4.visible {
-    transform: translateY(0) scale(1);
+    transform: scale(1);
 }
 
 .arrow-svg {
@@ -310,10 +290,26 @@ body {
     height: 100%;
 }
 
-/* 更流畅的箭头动画 */
+.arrow-path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.arrow-head {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* 箭头绘制动画 */
 @keyframes arrowDraw {
     0% {
-        stroke-dashoffset: 100;
+        stroke-dashoffset: 1000;
         opacity: 0;
     }
     50% {
@@ -325,36 +321,30 @@ body {
     }
 }
 
-.arrow.visible .arrow-line {
-    stroke-dasharray: 100;
-    stroke-dashoffset: 100;
-    animation: arrowDraw 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+.arrow.visible .arrow-path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: arrowDraw 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 .arrow.visible .arrow-head {
     stroke-dasharray: 50;
     stroke-dashoffset: 50;
-    animation: arrowDraw 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s forwards;
+    animation: arrowDraw 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.8s forwards;
 }
 
-/* 箭头流动动画 */
-@keyframes arrowFlow {
+/* 箭头指向动画 - 轻微移动 */
+@keyframes arrowPulse {
     0%, 100% {
-        transform: translateX(0);
+        transform: translateY(0);
     }
     50% {
-        transform: translateX(8px);
+        transform: translateY(-3px);
     }
 }
 
-.arrow-1.visible .arrow-svg,
-.arrow-3.visible .arrow-svg {
-    animation: arrowFlow 2.5s ease-in-out infinite 2.5s;
-}
-
-.arrow-2.visible .arrow-svg,
-.arrow-4.visible .arrow-svg {
-    animation: arrowFlow 2.5s ease-in-out infinite 2.5s reverse;
+.arrow.visible .arrow-svg {
+    animation: arrowPulse 2s ease-in-out infinite 3s;
 }
 
 /* 响应式设计 */
@@ -404,4 +394,6 @@ body {
         transform: rotate(90deg) translateY(0) scale(1) !important;
     }
 }
+
+
 
